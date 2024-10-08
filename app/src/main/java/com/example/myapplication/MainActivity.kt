@@ -12,9 +12,10 @@ import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var editTextET: EditText
-    private lateinit var textViewTV: TextView
-    private lateinit var buttonBTN: Button
+    private lateinit var result: TextView
+    private lateinit var count: TextView
+    private lateinit var inputText: EditText
+    private lateinit var convert: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -24,14 +25,19 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        editTextET = findViewById(R.id.editTextET)
-        textViewTV = findViewById(R.id.textTV)
-        buttonBTN = findViewById(R.id.buttonBTN)
+        result = findViewById(R.id.result)
+        count = findViewById(R.id.count)
+        inputText = findViewById(R.id.inputText)
+        convert = findViewById(R.id.convert)
 
-        onButtonClick(buttonBTN)
+        onClickConvert(convert)
     }
-    fun onButtonClick(view: View) {
-        val sendText = editTextET.text
-        textViewTV.text = sendText
+    fun onClickConvert(view: View) {
+        val input = inputText.text.toString()
+        val reversed = input.reversed()
+        result.text = reversed
+        val deleteSpaces = input.filter { it != ' ' }
+        val tmpCount = deleteSpaces.length
+        count.text = tmpCount.toString()
     }
 }

@@ -2,4 +2,9 @@
     <string name="app_name">My Application</string>
     <string name="hint_input_text">Поле ввода текста</string>
     <string name="text_view">Результат</string>
+    <string name="header">ВСЕ НАОБОРОТ</string>
+    <string name="editText_Hint">Введите текст</string>
+    <string name="convert">Преобразовать</string>
+    <string name="result">Результат</string>
+    <string name="count">Счетчик</string>
 </resources>
